@@ -10,15 +10,6 @@ int graph[4][4] = {
 
 std::vector<std::pair<int, int>> solusi;
 
-bool isVisited(int vertex, int edge) {
-    for (const std::pair<int, int> &i : solusi) {
-        if (vertex == i.first or edge == i.second) {
-            return true;
-        }
-    }
-    return false;
-}
-
 bool isVisited(int vertex) {
     for (const std::pair<int, int> &i : solusi) {
         if (vertex == i.first) {
