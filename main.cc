@@ -46,11 +46,10 @@ void FindShortest(int n, int start, int end, int& edge, int& vertex) {
         vertex = v[0] = not isVisited(v[1]) ? v[1] : v[0];
     }
     if (isVisited(vertex)) {
-        solusi.push_back({n, 0});
-        return;
-    }
-    solusi.push_back({n, edge});
-    if (not isVisited(vertex)) {
+        solusi.push_back({n, graph[n][3]});
+        solusi.push_back({3, 0});
+    } else {
+        solusi.push_back({n, edge});
         FindShortest(vertex, 0, 3, edge, vertex);
     }
 }
