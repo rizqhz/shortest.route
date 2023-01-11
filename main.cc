@@ -94,8 +94,8 @@ int main() {
     int sum = Solusi.at(1).second;
     for (int i = 0; i < Solusi.size() - 1; i++) {
         cout << "Kurir pergi dari rumah " << Change(Solusi.at(i).first)
-                  << " ke rumah " << Change(Solusi.at(i + 1).first)
-                  << " dengan jarak " << Solusi.at(i).second << "m" << endl;
+             << " ke rumah " << Change(Solusi.at(i + 1).first)
+             << " dengan jarak " << Solusi.at(i).second << "m" << endl;
         sum += Solusi.at(i + 1).second;
     }
     cout << "Total perjalanan kurir : " << sum << "m" << endl;
