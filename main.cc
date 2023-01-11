@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-using namespace std;
 
 int graph[4][4] = {
     {0, 30, 28, 41},  /* Rumah A */
@@ -9,17 +8,16 @@ int graph[4][4] = {
     {41, 15, 21, 0},  /* Rumah D */
 };
 
-vector<pair<int, int>> Solusi;
+std::vector<std::pair<int, int>> Solusi;
 
 bool isVisited(const int& vertex) {
-    for (const pair<int, int>& i : Solusi) {
+    for (const std::pair<int, int>& i : Solusi) {
         if (vertex == i.first) {
             return true;
         }
     }
     return false;
 }
-
 void ShortestRoute(int rumah, int start, int end, int& edge, int& vertex) {
     /* deklarasi */
     int mid;
@@ -93,11 +91,11 @@ int main() {
     ShortestRoute(3, 0, 3, edge, vertex);
     int sum = Solusi.at(1).second;
     for (int i = 0; i < Solusi.size() - 1; i++) {
-        cout << "Kurir pergi dari rumah " << Change(Solusi.at(i).first)
-             << " ke rumah " << Change(Solusi.at(i + 1).first)
-             << " dengan jarak " << Solusi.at(i).second << "m" << endl;
+        std::cout << "Kurir pergi dari rumah " << Change(Solusi.at(i).first)
+                  << " ke rumah " << Change(Solusi.at(i + 1).first)
+                  << " dengan jarak " << Solusi.at(i).second << "m\n";
         sum += Solusi.at(i + 1).second;
     }
-    cout << "Total perjalanan kurir : " << sum << "m" << endl;
+    std::cout << "Total perjalanan kurir : " << sum << "m\n";
     return 0;
 }
