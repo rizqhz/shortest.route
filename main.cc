@@ -18,6 +18,7 @@ bool isVisited(const int& vertex) {
     }
     return false;
 }
+
 void ShortestRoute(int rumah, int start, int end, int& edge, int& vertex) {
     /* deklarasi */
     int mid;
